@@ -4,11 +4,5 @@ import { svelte } from '@sveltejs/vite-plugin-svelte'
 export default defineConfig({
   plugins: [
     svelte(),
-  ],
-  build: {
-    watch: { exclude: ["./cms/**/*"] }
-  },
-  server: {
-    watch: { ignored: ["./cms/**/*"] }
-  }
+  ]
 })
