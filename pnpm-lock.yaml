@@ -13,6 +13,9 @@ dependencies:
   '@fortawesome/free-solid-svg-icons':
     specifier: ^6.4.0
     version: 6.4.0
+  '@fortawesome/svelte-fontawesome':
+    specifier: ^0.2.0
+    version: 0.2.0(@fortawesome/fontawesome-svg-core@6.4.0)(svelte@3.58.0)
   svelte-spa-router:
     specifier: ^3.3.0
     version: 3.3.0
@@ -297,6 +300,16 @@ packages:
     requiresBuild: true
     dependencies:
       '@fortawesome/fontawesome-common-types': 6.4.0
+    dev: false
+
+  /@fortawesome/svelte-fontawesome@0.2.0(@fortawesome/fontawesome-svg-core@6.4.0)(svelte@3.58.0):
+    resolution: {integrity: sha512-ri61lOqne8JtftoTW1AEnFAAlrTnKg0JvC8MiUJiEWhLu3wcbh7QwIytfs6YFRImVYOmK/OxcA9EWj+Ei8NM4g==}
+    peerDependencies:
+      '@fortawesome/fontawesome-svg-core': ~1 || ~6
+      svelte: '>=3.x'
+    dependencies:
+      '@fortawesome/fontawesome-svg-core': 6.4.0
+      svelte: 3.58.0
     dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
@@ -1756,7 +1769,6 @@ packages:
   /svelte@3.58.0:
     resolution: {integrity: sha512-brIBNNB76mXFmU/Kerm4wFnkskBbluBDCjx/8TcpYRb298Yh2dztS2kQ6bhtjMcvUhd5ynClfwpz5h2gnzdQ1A==}
     engines: {node: '>= 8'}
-    dev: true
 
   /tailwindcss@3.3.1(postcss@8.4.23):
     resolution: {integrity: sha512-Vkiouc41d4CEq0ujXl6oiGFQ7bA3WEhUZdTgXAhtKxSy49OmKs8rEfQmupsfF0IGW8fv2iQkp1EVUuapCFrZ9g==}
