@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer components {
+
+    .header-icon {
+        @apply flex flex-col place-content-center aspect-square;
+    }
+
+    .header-link {
+        @apply flex flex-row items-center gap-[calc(var(--p-1)_*_0.5)]
+    }
+
+    .card {
+        @apply grid place-content-center gap-[var(--gap,calc(var(--p-2)))] w-[var(--dimension,250px)] h-[var(--height,140.65px)] bg-[var(--bg,var(--white))] rounded-[var(--br,calc(var(--size-1)_*_0.5))] relative;
+        box-shadow: var(--shadow, 0px 0px 2px -1px rgb(0 0 0 / 0.7));
+        outline: 2px solid var(--darkGray);
+        outline-offset: -2px;
+        background-image: url(https://picsum.photos/400);
+
+        isolation: isolate;
+
+    }
+
+    .card:before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: #ffffff90;
+        border-radius: inherit;
+    }
+
+    .card a {
+        @apply text-4xl max-w-[90%] mx-auto;
+    }
+
+
+
+    .sg {
+        --col-width: 12rem;
+        --col-count: 6;
+
+        @apply grid;
+        grid-template-columns: 
+            minmax(1rem, 1fr)
+            repeat(var(--col-count), minmax(0, var(--col-width)))
+            minmax(1rem, 1fr);
+
+    }
+    
+    .sg > * {
+        grid-column: 1 / -1;
+    }
+
+
+
+    @media (min-width: 768px) {
+        .sg.two {
+            --col-number: calc(var(--col-count, 6) / 2);
+        }
+        .sg.three { 
+            --col-number: calc(var(--col-count, 6) / 3);
+        }
+
+        .sg.cols > * {
+            grid-column: span var(--col-number);
+        }
+        .sg.cols > *:first-child {
+            grid-column: var(--col-start, 2) / span var(--col-number);
+        }
+        .sg.cols > *:last-child {
+            grid-column: span var(--col-number) / calc(var(--col-start, 2) * -1);
+        }
+    }
+
+}

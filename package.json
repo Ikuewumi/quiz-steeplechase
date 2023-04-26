@@ -1,0 +1,35 @@
+{
+  "name": "qs",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^2.0.3",
+    "@tsconfig/svelte": "^4.0.1",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.23",
+    "postcss-nested": "^6.0.1",
+    "sass": "^1.62.0",
+    "svelte": "^3.57.0",
+    "svelte-check": "^2.10.3",
+    "tailwindcss": "^3.3.1",
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.2"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-brands-svg-icons": "^6.4.0",
+    "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "svelte-spa-router": "^3.3.0",
+    "ts-to-zod": "^3.0.0",
+    "zod": "^3.21.4"
+  }
+}

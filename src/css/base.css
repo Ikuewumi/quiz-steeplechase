@@ -1,0 +1,92 @@
+/* Importing Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Luckiest+Guy&family=Sen:wght@400;700;800&display=swap');
+
+:root {
+    --blackHsl: 0, 0%, 0%;
+    --whiteHsl: 0, 0%, 100%;
+    
+    --darkGrayHsl: 0, 0%, 48%;
+    --lightGrayHsl: 0, 0%, 93%;
+    --grayHsl: 0, 0%, 96%;
+    
+    --blueHsl: 197, 37%, 24%;
+    --greenHsl: 173, 58%, 39%;
+    --yellowHsl: 43, 74%, 66%;
+    --orangeHsl: 27, 87%, 67%;
+    --redHsl: 12, 76%, 61%;
+
+
+    --black: hsl(var(--blackHsl));
+    --white: hsl(var(--whiteHsl));
+
+    --darkGray: hsl(var(--darkGrayHsl));
+    --lightGray: hsl(var(--lightGrayHsl));
+    --gray: hsl(var(--grayHsl));
+    
+    --blue: hsl(var(--blueHsl));
+    --green: hsl(var(--greenHsl));
+    --yellow: hsl(var(--yellowHsl));
+    --orange: hsl(var(--orangeHsl));
+    --red: hsl(var(--redHsl));
+
+
+    --size-4: 5rem;
+    --size-3: 3rem;
+    --size-2: 2rem;
+    --size-1: 1rem;
+    --size-0: 0.8rem;
+    
+    
+
+    --p-6: 2rem;
+    --p-5: 1.75rem;
+    --p-4: 1.5rem;
+    --p-3: 1.25rem;
+    --p-2: 1rem;
+    --p-1: 0.75rem;
+    --p-0: 0.5rem;
+    --p: 0.2rem;
+
+    --custom-font: 'Sen', 'Poppins', 'Literata', 'Noto Color Emoji', sans-serif;
+    --heading-font: 'Luckiest Guy', 'Noto Color Emoji', sans-serif;
+    --stroke-font: 'Luckiest Guy', 'Noto Color Emoji', sans-serif;
+
+
+
+    scroll-behavior: smooth;
+    font-size: 15px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-size: 1rem;
+    font-family: var(--custom-font);
+    min-height: 100vh;
+    background: var(--lightGray);
+    color: var(--black);
+}
+
+
+img, svg, picture,
+figure {
+    max-width: 100%;
+}
+
+p {
+    line-height: 1.2;
+}
+
+.font-h {
+    font-family: var(--heading-font);
+}
+
+
+body {
+    padding-block-end: 5rem;
+}
