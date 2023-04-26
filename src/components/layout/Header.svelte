@@ -40,9 +40,4 @@
     .header-container {
         grid-column: 2 / -2;
     }
-
-
-    .header-icon {
-
-    }
 </style>

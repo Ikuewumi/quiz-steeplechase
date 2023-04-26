@@ -70,18 +70,8 @@
     }
 
     .carousel {
-        /* grid-auto-flow: column; */
         scroll-snap-type: x mandatory;
     }
-
-    .carousel > * {
-        scroll-snap-align: start;
-    }
-
-    .controls {
-
-    }
-
 
     .controls button {
         padding: calc(var(--p-1) * 0.5) var(--p-2);
