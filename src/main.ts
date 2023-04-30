@@ -4,10 +4,10 @@ import './css/index.css'
 
 import App from './App.svelte'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faLungs, faHome, faBook, faList, faBookOpen, faHeart, faBone, faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import { faLungs, faHome, faBook, faList, faBookOpen, faHeart, faBone, faChevronRight, faChevronLeft, faPlus, faRightFromBracket, faCircleInfo } from '@fortawesome/free-solid-svg-icons'
 
 
-library.add(faLungs, faHome, faBook, faList, faBookOpen, faHeart, faBone, faChevronRight, faChevronLeft);
+library.add(faLungs, faHome, faBook, faList, faBookOpen, faHeart, faBone, faChevronRight, faChevronLeft, faPlus, faRightFromBracket, faCircleInfo);
 
 
 const app = new App({

@@ -15,11 +15,14 @@
     }
 
     .card {
-        @apply grid place-content-center gap-[var(--gap,calc(var(--p-2)))] w-[var(--dimension,250px)] h-[var(--height,140.65px)] bg-[var(--bg,var(--white))] rounded-[var(--br,calc(var(--size-1)_*_0.5))] relative;
+        @apply grid place-content-center gap-[var(--gap,calc(var(--p-2)))] w-[var(--dimension)] bg-[var(--bg,var(--white))] rounded-[var(--br,calc(var(--size-1)_*_0.5))] relative aspect-[16_/_9];
         box-shadow: var(--shadow, 0px 0px 2px -1px rgb(0 0 0 / 0.7));
         outline: 2px solid var(--darkGray);
         outline-offset: -2px;
         background-image: url(https://picsum.photos/400);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
 
         isolation: isolate;
 
@@ -76,5 +79,15 @@
             grid-column: span var(--col-number) / calc(var(--col-start, 2) * -1);
         }
     }
+
+
+
+
+
+    .custom-button {
+        @apply px-3 py-1 bg-gray-600 text-white px-10 py-2 rounded-xl tracking-[1.2px];
+        font-family: var(--heading-font);
+    }
+    
 
 }

@@ -3,13 +3,19 @@
     import {FontAwesomeIcon as Icon} from "@fortawesome/svelte-fontawesome";
     let carouselContainer: HTMLElement;
 
-    const toPrevious = () => { carouselContainer.scrollLeft -= 300 }
-    const toNext = () => { carouselContainer.scrollLeft += 300 }
+    const toPrevious = () => {
+        console.log('carousel');
+        carouselContainer.scrollLeft -= 300
+    }
+    const toNext = () => {
+        console.log('carousel');
+        carouselContainer.scrollLeft += 300
+    }
 
 </script>
 
 <section class="sg">
-    <div class="container grid py-8 gap-[calc(var(--p-1)_*_1.5)_0] bg-white relative rounded-t-3xl md:px-10 px-5 overflow-y-hidden">
+    <div class="md:shadow-[0_0_4px_-1px_hsla(var(--blackHsl),_0.6)] shadow-[0_0_3px_-1px_hsla(var(--blackHsl),_0.5)] grid py-8 pb-10 gap-[calc(var(--p-1)_*_1.5)_0] bg-white relative rounded-3xl md:px-10 px-5 overflow-y-hidden">
 
         <h2 class="text-3xl font-h text-gray-600 text-underline">Featured</h2>
         <Icon icon="fa-solid fa-bone" class="text-[#6c5ce7] absolute inset-[0.2em_0.2em_auto_auto] text-[10rem] opacity-[0.1]" />
@@ -27,21 +33,24 @@
 
         </div>
         <div class="controls text-2xl text-white mt-4 flex gap-[calc(var(--p-1))] mx-auto mx:mx-0 md:ml-auto" aria-labelledby="#featured-carousel">
-            <button title="Previous" on:click="{toPrevious}">
-                <i><Icon icon="fa-solid fa-chevron-left"  /></i>
+            <button class="custom-button rounded-2xl px-6" title="Previous" on:click="{toPrevious}">
+                <i class="text-xl hidden md:flex"><Icon icon="fa-solid fa-chevron-left"  /></i>
                 <span>Previous</span>
             </button>
-            <button title="Next" on:click="{toNext}">
+            <button class="custom-button rounded-2xl px-6" title="Next" on:click="{toNext}">
                 <span>Next</span>
-                <i><Icon icon="fa-solid fa-chevron-right"  /></i>
+                <i class="text-xl hidden md:flex"><Icon icon="fa-solid fa-chevron-right"  /></i>
             </button>
         </div>
     </div>
 </section>
 
-<style>
+<style lang="scss">
     section > * {
-        grid-column: 2 / -2;
+        grid-column: 1 / -1;
+        @media (min-width: 768px) {
+            grid-column: 2 / -2;
+        }
     }
 
     .carousel, .carousel-container {
@@ -64,22 +73,16 @@
         display:none;
     }
 
-
-    .carousel-container {
+    .carousel, .carousel-container {
         scroll-snap-type: x mandatory;
-    }
-
-    .carousel {
-        scroll-snap-type: x mandatory;
+        /* scroll-snap-align:; */
     }
 
     .controls button {
-        padding: calc(var(--p-1) * 0.5) var(--p-2);
-        background: #4b5563;
-        border-radius: calc(var(--p-1) * 0.25);
+
         display: flex;
         align-items: center;
-        border-radius: 0.2rem;
+        // border-radius: 0.2rem;
         gap: 0.5rem;
     }
 
