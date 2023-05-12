@@ -1,0 +1,12 @@
+# GET http://localhost:1337/api/quizzes/1
+
+
+---
+
+
+# GET http://localhost:1337/api/featured
+
+
+---
+
+GET http://localhost:1337/api/authors/1

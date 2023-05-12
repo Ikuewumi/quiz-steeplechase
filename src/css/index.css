@@ -6,6 +6,16 @@
 
 @layer components {
 
+    .loading-img {
+        @apply mx-auto h-[min(50vw,_200px)];
+    }
+
+    *::selection {
+        background: #6c5ce7;
+        color: #ffffff;
+
+    }
+
     .header-icon {
         @apply flex flex-col place-content-center aspect-square;
     }
@@ -15,31 +25,38 @@
     }
 
     .card {
-        @apply grid place-content-center gap-[var(--gap,calc(var(--p-2)))] w-[var(--dimension)] bg-[var(--bg,var(--white))] rounded-[var(--br,calc(var(--size-1)_*_0.5))] relative aspect-[16_/_9];
+        @apply grid place-content-center gap-[var(--gap,calc(var(--p-2)))] bg-[var(--bg,var(--white))] rounded-[var(--br,calc(var(--size-1)_*_0.5))] relative aspect-[16_/_9];
         box-shadow: var(--shadow, 0px 0px 2px -1px rgb(0 0 0 / 0.7));
         outline: 2px solid var(--darkGray);
         outline-offset: -2px;
-        background-image: url(https://picsum.photos/400);
+        background-image: var(--bg-img, none);
         background-position: center center;
         background-repeat: no-repeat;
-        background-size: cover;
-
+        background-size: 100%;
+        
         isolation: isolate;
+        
+    }
+
+    .card, .card::before {
+        transition: 400ms ease-out;
+    }
+    
+    .card:hover {
+        background-size: 150%;
 
     }
 
     .card:before {
+        @apply bg-[#ffffff90] hover:bg-[#ffffff99];
         content: '';
         position: absolute;
         inset: 0;
         z-index: -1;
-        background: #ffffff90;
         border-radius: inherit;
     }
 
-    .card a {
-        @apply text-4xl max-w-[90%] mx-auto;
-    }
+
 
 
 
@@ -90,4 +107,52 @@
     }
     
 
+
+
+    .create-form > .field {
+        @apply mb-7;
+    }
+
+
+    .custom-button.btn {
+        @apply border border-solid border-2 border-[currentColor];
+    }
+
+
+
+    .overlay {
+        @apply hover:shadow-[inset_0_0_200px_100px_rgba(255_255_255_/_0.2)]
+    }
+
+    .overlay-dark {
+        @apply hover:shadow-[inset_0_0_200px_100px_rgba(0_0_0_/_0.2)]
+    }
+
+
+    .button-bar {
+        @apply flex flex-row flex-wrap gap-[0.4rem] p-2 rounded-xl border-solid border-2 border-gray-600 border-solid border-2 border-gray-600 w-fit bg-white;
+    }
+
+
+
+    .question-create-card {
+        @apply before:absolute before:inset-[1rem_1rem_auto_auto] before:text-gray-600 before:text-6xl before:opacity-[0.2] before:z-[-1];
+    }
+
+
+
+    /* Dialog element */
+    dialog.preview-dialog > div.content > * {
+        grid-column: 2 / -2;
+    }
+
+    .json-container .cm-lineNumbers,
+    .json-container .cm-gutterElement {
+        display: none!important;
+    }
+
+
+    .page > * {
+        grid-column: 2 / -2;
+    }
 }

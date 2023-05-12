@@ -13,5 +13,17 @@ export const routes = {
 
     "/create" : wrap({
         asyncComponent: () => import('../pages/CreateGame.svelte')
+    }),
+
+    "/image" : wrap({
+        asyncComponent: () => import('../pages/CreateImage.svelte')
+    }),
+
+    "/archive" : wrap({
+        asyncComponent: () => import('../pages/Archive.svelte')
+    }),
+
+    "/game" : wrap({
+        asyncComponent: () => import('../pages/Game.svelte')
     })
 }

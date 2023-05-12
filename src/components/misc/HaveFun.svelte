@@ -4,7 +4,7 @@
 
     <h2 class="font-h text-4xl text-gray-700">Just wanna have fun?</h2>
     <p class="text-xl">Not sure what topic to be tested on? Lets do a random quiz</p>
-    <button class="custom-button w-min mx-auto text-3xl">Start</button>
+    <button class="pointer custom-button overlay w-min mx-auto text-3xl">Start</button>
 
 
 </section>
@@ -20,7 +20,7 @@
         position: relative;
         isolation: isolate;
         z-index: -1;
-        box-shadow: 0 0 2px -1px hsl(0% 0% 0% / 0.8);
+        box-shadow: 0 0 2px -1px hsl(0deg 0% 0% / 80%);
         // border-radius: 4vmax;
 
 
@@ -31,7 +31,7 @@
             position: absolute;
             inset: 0;
             z-index: -1;
-            background-color: hsla(0% 0% 100% / 0.8);
+            background-color: hsla(0deg 0% 100% / 80%);
         }
     
     

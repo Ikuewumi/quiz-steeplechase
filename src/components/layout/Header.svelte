@@ -20,7 +20,7 @@
                 <span>Home</span>
             </a>
 
-            <a href="#/" class="header-link">
+            <a href="#/archive" class="header-link">
                 <Icon icon="fa-solid fa-book" />
                 <span>Archive</span>
             </a>

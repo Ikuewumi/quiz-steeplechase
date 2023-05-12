@@ -7,14 +7,17 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "json": "json-server -w ./data/data.json"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.0.3",
     "@tsconfig/svelte": "^4.0.1",
     "autoprefixer": "^10.4.14",
+    "json-server": "^0.17.3",
     "postcss": "^8.4.23",
     "postcss-nested": "^6.0.1",
+    "qs": "^6.11.1",
     "sass": "^1.62.0",
     "svelte": "^3.57.0",
     "svelte-check": "^2.10.3",
@@ -24,11 +27,15 @@
     "vite": "^4.3.2"
   },
   "dependencies": {
+    "@codemirror/lang-json": "^6.0.1",
+    "@codemirror/state": "^6.2.0",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-brands-svg-icons": "^6.4.0",
     "@fortawesome/free-regular-svg-icons": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/svelte-fontawesome": "^0.2.0",
+    "codemirror": "^6.0.1",
+    "prettier": "^2.8.8",
     "svelte-spa-router": "^3.3.0",
     "ts-to-zod": "^3.0.0",
     "zod": "^3.21.4"
