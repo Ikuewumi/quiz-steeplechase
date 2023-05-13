@@ -45,6 +45,7 @@
         transition: 400ms ease;
         scroll-snap-align: center;
         min-width: min(350px, 90vw);
+        max-height: 270px;
 
         flex-grow: 1;
 
