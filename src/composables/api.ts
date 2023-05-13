@@ -1,6 +1,8 @@
 import { showToast } from "../store/toast";
 
-const apiUrl = "http://localhost:1337/api";
+const apiBase = ["localhost", "127.0.0.1"].includes(window.location.hostname) ? "http://localhost:1337" : "https://picquiz.onrender.com"
+const apiUrl = `${apiBase}/api`;
+console.log(window.location)
 
 /**
  * Fetches data from the API.
