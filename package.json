@@ -35,6 +35,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/svelte-fontawesome": "^0.2.0",
     "codemirror": "^6.0.1",
+    "lit": "^2.7.4",
     "prettier": "^2.8.8",
     "svelte-spa-router": "^3.3.0",
     "ts-to-zod": "^3.0.0",

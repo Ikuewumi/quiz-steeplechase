@@ -6,10 +6,10 @@
 
 <header class="w-full bg-white shadow sg py-6 rounded-b-3xl" class:hidden="{$useShowHeader === false}">
     <div class="header-container flex items-center flex-row justify-between font-h text-gray-600">
-        <div class="logo flex flex-row items-center gap-[calc(var(--p-1)_*_0.5)]">            
+        <a href="/#/" class="logo flex flex-row items-center gap-[calc(var(--p-1)_*_0.5)] overlay">            
             <Icon icon="fa-solid fa-lungs" class="text-4xl" />
             <h1 class="text-3xl leading-[0.8]">picquiz</h1>
-        </div>
+        </a>
 
 
 
@@ -47,5 +47,18 @@
     }
     .header-container {
         grid-column: 2 / -2;
+    }
+
+    .logo {
+        position: relative;
+        border-radius: 0.5rem;
+
+
+
+        &:focus {
+            outline: 2px dotted var(--customGray);
+            outline-offset: 5px;
+        }
+
     }
 </style>

@@ -12,9 +12,9 @@ export default {
       },
 
       fontFamily: {
-        sans: "Permanent Marker, Helvetica, Arial, sans-serif",
+        sans: "var(--custom-font), Helvetica, Arial, sans-serif",
         serif: "Lora, serif",
-        mono: "Consolas, monospace"
+        mono: "var(--mono-font), Consolas, monospace"
       }
     },
   },
