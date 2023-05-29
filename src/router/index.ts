@@ -5,6 +5,9 @@ export const routes = {
         asyncComponent: () => import('../pages/Home.svelte')
     }),
 
+    "/dev": wrap({
+        asyncComponent: () => import('../pages/Dev.svelte')
+    }),
 
     "/game/:id" : wrap({
         asyncComponent: () => import('../pages/Game.svelte')

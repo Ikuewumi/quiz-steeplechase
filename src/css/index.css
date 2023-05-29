@@ -139,7 +139,13 @@
         @apply before:absolute before:inset-[1rem_1rem_auto_auto] before:text-gray-600 before:text-6xl before:opacity-[0.2] before:z-[-1];
     }
 
+    .data-page {
+      @apply gap-[1rem_0] mt-4;
+    }
 
+    .data-page > * {
+      grid-column: 2 / -2;
+    }
 
     /* Dialog element */
     dialog.preview-dialog > div.content > * {

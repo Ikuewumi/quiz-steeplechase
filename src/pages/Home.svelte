@@ -36,6 +36,6 @@ onDestroy(() => {
 </svelte:head>
 
 <Hero />
-
-    <Featured quizzes="{featuredDataQuizzes}" />
+<Featured quizzes="{featuredDataQuizzes}" />
 <HaveFun />
+

@@ -1,10 +1,44 @@
 <script lang="ts">
     import {FontAwesomeIcon as Icon} from "@fortawesome/svelte-fontawesome"
     import { useShowHeader } from "../../store/header";
+    import {type StrapiItem} from "../../types/api.d.ts";
+    import {apiFetch} from "../../composables/api.ts";
+    import {onMount, onDestroy} from "svelte";
+
+    interface AdMessage {
+        text: message
+    }
+
+
+    const ctr = new AbortController()
+    let adText:string
+    onMount(async () => {
+        const res = await apiFetch('admessage', '', ctr.signal)
+        console.log(res)
+        adText=res?.data?.attributes?.text ?? ""
+    })
+
+
+
+    onDestroy(() => {
+        ctr.abort()
+    })
+  
 
 </script>
 
+   {#if adText}
+      <div class="admessage bg-gray-600 text-center font-h font-bold py-2 px-1 text-white">
+         {adText}
+
+         <button class="px-2 rounded-2xl" on:click="{() => adText = ""}"><Icon icon="fa-solid fa-times" /></button>
+      </div>
+    {/if}
+
+
+
 <header class="w-full bg-white shadow sg py-6 rounded-b-3xl" class:hidden="{$useShowHeader === false}">
+   
     <div class="header-container flex items-center flex-row justify-between font-h text-gray-600">
         <a href="/#/" class="logo flex flex-row items-center gap-[calc(var(--p-1)_*_0.5)] overlay">            
             <Icon icon="fa-solid fa-lungs" class="text-4xl" />
@@ -25,14 +59,19 @@
                 <span>Archive</span>
             </a>
 
-
+          {#if false}
             <a href="#/" class="header-link">
                 <Icon icon="fa-solid fa-list" />
                 <span>More</span>
             </a>
+          {/if}
         </nav>
     
     </div>
+
+
+    
+
 </header>
 
 <style lang="scss">
@@ -60,5 +99,17 @@
             outline-offset: 5px;
         }
 
+    }
+    .admessage {
+        grid-column: 1 / -1;
+        position: relative;
+
+
+        button {
+            outline: 2px solid var(--white);
+            position: absolute;
+            inset: auto 5px auto auto;
+
+        }
     }
 </style>

@@ -66,7 +66,7 @@
         </div>
     {:then quizzes}
                
-        <ul data-card-list class="carousel grid gap-[var(--p-2)] overflow-y-[auto] py-2">
+        <ul data-card-list class="grid gap-[var(--p-2)] overflow-y-[auto] py-2">
             {#each quizzes as quiz, index}
                 <li class="contents">
                     <C title="{quiz.attributes.title}" 

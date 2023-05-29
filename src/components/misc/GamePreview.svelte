@@ -2,11 +2,18 @@
     import {FontAwesomeIcon as Icon} from "@fortawesome/svelte-fontawesome";
     import type { StrapiItem, StrapiQuiz } from "../../types/api";
     import { createEventDispatcher } from "svelte";
+    import Select from "../utilities/Select.svelte";
+    import Preview from "../utilities/Preview.svelte";
+    import {quizMode, quizTime} from "../../store/selects.ts";
+  
 
-
+    $: description = $quizMode.selected === 0 ? 
+        `In Test Mode, runs a timed, normal quiz, which is marked for testing your knowledge. Choose your time(s) per questions below` :
+        `In Learn Mode, runs a game-like quiz with no timers, and instant feedback on your answers. Great for learning facts about a topic`;
 
     const evt = createEventDispatcher()
     export let data:StrapiItem<StrapiQuiz>["data"]
+    let showPreview = false;
 
 
 
@@ -27,10 +34,37 @@
 
 
     <button 
-        on:click="{startQuiz}"
+        on:click="{_ => showPreview = true}"
         class="start bg-gray-600 font-h text-white btn overlay border-none text-4xl py-2 pb-3 px-9 w-fit ml-auto rounded-2xl outline-none mt-2">
         Start
     </button>
+
+
+
+
+    <Preview heading="Settings" show="{showPreview}" on:close-modal="{startQuiz}">
+       <div class="font-h mt-6">
+      <Select options="{$quizMode.options}" selected="{$quizMode.selected}"
+        on:select-option="{(evt) => $quizMode.selected = evt.detail }" />
+    </div>
+    
+    <p class="leading-[1.25] mt-4 px-7 py-6 bg-[hsla(var(--blueHsl),_0.8)] rounded-xl shadow text-white font-bold">{description}</p>
+
+    
+
+    <!--the time part-->
+    {#if $quizMode.selected === 0}
+      <div class="set-time mt-6">
+        <Select options="{$quizTime.options}" selected="{$quizTime.selected}"
+          on:select-option="{(evt) => $quizTime.selected = evt.detail}"
+        />
+      </div>
+    {/if}
+
+
+    <small class="text-gray-600 text-[0.95rem] italic mt-6"><b class="font-bold">Note</b>: Closing the settings page automatically starts the quiz</small>
+ 
+    </Preview>
 </div>
 
 
@@ -59,5 +93,14 @@
     button.start:focus-visible {
         outline: 2px solid currentColor;
         outline-offset: -5px;
+    }
+
+
+    .set-time {
+      --select-max-w: 100px;
+      --select-min-w: 100px;
+      --select-h: 60px;
+      --select-gap: 0.5rem;
+      --select-size: 1.4rem;
     }
 </style>

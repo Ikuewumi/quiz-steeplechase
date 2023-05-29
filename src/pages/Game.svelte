@@ -6,19 +6,21 @@
     
     import { apiFetch } from "../composables/api";
     import { useShowHeader } from "../store/header";
+    import {QuizNormal as Quiz} from "../classes/quizNormal.ts";
     import { onDestroy, onMount } from "svelte";
     import {location} from "svelte-spa-router";
     import type { StrapiItem, StrapiQuiz } from "../types/api";
     
     export let params: {id: string};
+    let quizClass:Quiz
 
     const ctr = new AbortController()
     let quiz:StrapiItem<StrapiQuiz>["data"];
     let booleans = { startPage: false, previewPage: false, postQuiz: false }
 
     type Page = keyof typeof booleans;
-
-
+    
+ 
     const toPage = (key: Page) => {
         Object.keys(booleans).forEach((k: Page) => {
             const newObj = { ...booleans }
@@ -41,6 +43,19 @@
 
     }
 
+
+
+    const startQuiz = () => {
+        if (!quiz) return
+
+        quizClass = new Quiz()
+        quizClass.enterQuiz(quiz.attributes.questions)
+        toPage("startPage");
+    }
+
+
+
+
     let pr = getQuiz()
 
     
@@ -56,7 +71,6 @@
 
     onMount(() => { 
         console.log($location, params)
-
     })
     onDestroy(() => { $useShowHeader = true })
 
@@ -76,11 +90,9 @@
     {:then quiz}
         
         {#if booleans.previewPage}
-        <GamePreview data="{quiz}" on:start-quiz="{toPage.bind(null,`startPage`)}" />
-        {:else if booleans.startPage}
-        <GameProper data="{quiz}" on:end-quiz="{toPage.bind(null,`previewPage`)}" />
-
-
+          <GamePreview data="{quiz}" on:start-quiz="{startQuiz}" />
+        {:else if booleans.startPage && quizClass}
+          <GameProper quizClass="{quizClass}" />
         {/if}
 
 
