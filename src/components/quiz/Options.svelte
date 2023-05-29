@@ -43,7 +43,8 @@ const chooseOption = (i=0) => {
             --custom-shadow: none;
 
             
-            height: 70px;
+            min-height: 70px;
+            padding-block: 0.5rem;
             cursor: pointer;
             display: flex;
             place-items: center;
