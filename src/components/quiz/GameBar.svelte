@@ -4,6 +4,8 @@ import {createEventDispatcher} from "svelte"
 const evt = createEventDispatcher();
 
 
+const endQuiz = () => evt('end-quiz');
+
 </script>
 
 <figure class="game-bar bg-white flex flex-row py-5 px-8 text-gray-600 rounded-xl">
@@ -26,7 +28,7 @@ const evt = createEventDispatcher();
                     <Icon icon="fa-solid fa-circle-info" />
                 </button>
                 
-                <button class="text-3xl text-[var(--red)]" title="Exit!" on:click="{evt.bind(null,"end-quiz")}">
+                <button class="text-3xl text-[var(--red)]" title="Exit!" on:click="{endQuiz}">
                     <Icon icon="fa-solid fa-times" />
                 </button>
                 

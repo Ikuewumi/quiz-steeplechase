@@ -79,7 +79,8 @@ import {QuizNormal as Quiz} from "../../classes/quizNormal.ts";
         
         
         
-    <GameBar on:exit-quiz="{evt.bind(null, 'exit-quiz')}" />
+
+    <GameBar on:end-quiz="{evt.bind(null, 'end-quiz')}" />
 
 
 

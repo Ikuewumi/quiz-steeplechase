@@ -31,7 +31,7 @@
       <div class="admessage bg-gray-600 text-center font-h font-bold py-2 px-1 text-white">
          {adText}
 
-         <button class="px-2 rounded-2xl" on:click="{() => adText = ""}"><Icon icon="fa-solid fa-times" /></button>
+         <button title="close" class="px-2 rounded-2xl" on:click="{() => adText = ""}"><Icon icon="fa-solid fa-times" /></button>
       </div>
     {/if}
 

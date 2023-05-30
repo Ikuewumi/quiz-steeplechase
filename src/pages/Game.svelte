@@ -92,7 +92,7 @@
         {#if booleans.previewPage}
           <GamePreview data="{quiz}" on:start-quiz="{startQuiz}" />
         {:else if booleans.startPage && quizClass}
-          <GameProper quizClass="{quizClass}" />
+          <GameProper quizClass="{quizClass}" on:end-quiz="{toPage.bind(null, 'previewPage')}" />
         {/if}
 
 

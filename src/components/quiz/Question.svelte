@@ -1,5 +1,6 @@
 <script lang="ts">
     import {question} from "../../store/quiz.ts"
+    import {img} from "../../store/image.ts";
 </script>
 
 
@@ -17,7 +18,7 @@
       {$question.question}
     </div>    
 
-    <div class="image rounded-xl">
+    <div class="image rounded-xl" on:click="{_=>{$img=$question.image}}">
       <img src="{$question.image}" alt="{$question.question}">
     </div>
     

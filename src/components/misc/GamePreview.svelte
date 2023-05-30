@@ -63,6 +63,13 @@
 
 
     <small class="text-gray-600 text-[0.95rem] italic mt-6"><b class="font-bold">Note</b>: Closing the settings page automatically starts the quiz</small>
+
+
+      <button 
+        on:click="{startQuiz}"
+        class="start bg-[hsla(var(--blueHsl),_0.8)] font-h text-white btn overlay border-none text-4xl py-2 pb-3 px-10 w-fit ml-auto rounded-[100vmax] lowercase outline-none mt-5">
+        Start
+    </button>
  
     </Preview>
 </div>
